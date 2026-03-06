@@ -1,0 +1,19 @@
+# Xcode
+WhatsUp/WhatsUp.xcodeproj/xcuserdata/
+WhatsUp/WhatsUp.xcodeproj/project.xcworkspace/xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# Build
+build/
+
+# Generated icon intermediates
+WhatsUp/Resources/AppIcon.iconset/
+WhatsUp/Resources/generate_icon.py
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc

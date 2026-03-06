@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		190C9D5F449B0337E2853252 /* ZoomDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A31A14ABD48CA83BA8CDA /* ZoomDetector.swift */; };
+		38A2CF81C1CA6C0E2C8EC7C9 /* MeetingMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854E93386ED5B2874659503 /* MeetingMonitor.swift */; };
+		431C94EF01A060184F1D8F24 /* AlarmPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8075503A1445812F0F4DD57 /* AlarmPanelView.swift */; };
+		66906BC10F0973DC5D35584E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938123AB9F5997DA2F069505 /* AppState.swift */; };
+		68619B658EADC50DA2B8A215 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70C53307B8F68A5EEE2DC8 /* CalendarService.swift */; };
+		707C562814CE900F67A8465C /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD63D8C8141DA198E23C44E /* SoundPlayer.swift */; };
+		A21BEFB7D9810F732C23C42B /* WhatsUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176696E8ACAA00D62F33E6FD /* WhatsUpApp.swift */; };
+		A22413EC4442A81DBBC3BCB7 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB91FC91235F4914F5828B89 /* CalendarEvent.swift */; };
+		CD955962D61A545318A1A224 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = DD9CB68A91F7AC7DAD919E57 /* AppIcon.icns */; };
+		D323E1749D786CFF33311FA4 /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE46745A83E5CBA5DA8724E /* TaskStore.swift */; };
+		EED1CDC04E769F3A94D04F0A /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF3CD3749E4BA84EDCF791 /* AlarmController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		176696E8ACAA00D62F33E6FD /* WhatsUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsUpApp.swift; sourceTree = "<group>"; };
+		27EF3CD3749E4BA84EDCF791 /* AlarmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
+		3C53E2499D8E2B558A874219 /* WhatsUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		938123AB9F5997DA2F069505 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		AEE46745A83E5CBA5DA8724E /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
+		B8075503A1445812F0F4DD57 /* AlarmPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPanelView.swift; sourceTree = "<group>"; };
+		CB91FC91235F4914F5828B89 /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		D73A31A14ABD48CA83BA8CDA /* ZoomDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomDetector.swift; sourceTree = "<group>"; };
+		DD9CB68A91F7AC7DAD919E57 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		EDD63D8C8141DA198E23C44E /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		F854E93386ED5B2874659503 /* MeetingMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingMonitor.swift; sourceTree = "<group>"; };
+		FF70C53307B8F68A5EEE2DC8 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		22AD31FE55FA41EB6689B276 = {
+			isa = PBXGroup;
+			children = (
+				E34AFABB0FE5358D77ABEAB3 /* Resources */,
+				E2DAAB65A2BD60B8BF50A262 /* Sources */,
+				4A93EF84334FF8D8E14225D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A93EF84334FF8D8E14225D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C53E2499D8E2B558A874219 /* WhatsUp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2DAAB65A2BD60B8BF50A262 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				27EF3CD3749E4BA84EDCF791 /* AlarmController.swift */,
+				B8075503A1445812F0F4DD57 /* AlarmPanelView.swift */,
+				938123AB9F5997DA2F069505 /* AppState.swift */,
+				CB91FC91235F4914F5828B89 /* CalendarEvent.swift */,
+				FF70C53307B8F68A5EEE2DC8 /* CalendarService.swift */,
+				F854E93386ED5B2874659503 /* MeetingMonitor.swift */,
+				EDD63D8C8141DA198E23C44E /* SoundPlayer.swift */,
+				AEE46745A83E5CBA5DA8724E /* TaskStore.swift */,
+				176696E8ACAA00D62F33E6FD /* WhatsUpApp.swift */,
+				D73A31A14ABD48CA83BA8CDA /* ZoomDetector.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E34AFABB0FE5358D77ABEAB3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD9CB68A91F7AC7DAD919E57 /* AppIcon.icns */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E49EAE382703F69CBAF7C2B /* WhatsUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3D05D95131987EA501E0431 /* Build configuration list for PBXNativeTarget "WhatsUp" */;
+			buildPhases = (
+				E08B42195595C66CD935CB4A /* Sources */,
+				E00FDB42C7E4DC1138757281 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhatsUp;
+			packageProductDependencies = (
+			);
+			productName = WhatsUp;
+			productReference = 3C53E2499D8E2B558A874219 /* WhatsUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		697C010823738A84DCA89284 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = A989544C75424DAE4CF438E1 /* Build configuration list for PBXProject "WhatsUp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 22AD31FE55FA41EB6689B276;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4A93EF84334FF8D8E14225D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E49EAE382703F69CBAF7C2B /* WhatsUp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E00FDB42C7E4DC1138757281 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD955962D61A545318A1A224 /* AppIcon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E08B42195595C66CD935CB4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED1CDC04E769F3A94D04F0A /* AlarmController.swift in Sources */,
+				431C94EF01A060184F1D8F24 /* AlarmPanelView.swift in Sources */,
+				66906BC10F0973DC5D35584E /* AppState.swift in Sources */,
+				A22413EC4442A81DBBC3BCB7 /* CalendarEvent.swift in Sources */,
+				68619B658EADC50DA2B8A215 /* CalendarService.swift in Sources */,
+				38A2CF81C1CA6C0E2C8EC7C9 /* MeetingMonitor.swift in Sources */,
+				707C562814CE900F67A8465C /* SoundPlayer.swift in Sources */,
+				D323E1749D786CFF33311FA4 /* TaskStore.swift in Sources */,
+				A21BEFB7D9810F732C23C42B /* WhatsUpApp.swift in Sources */,
+				190C9D5F449B0337E2853252 /* ZoomDetector.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		727011E6866F4327AECCEF9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/WhatsUp.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmcknight.whatsup;
+				PRODUCT_NAME = WhatsUp;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BCCB84622BCB5AA39342A569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/WhatsUp.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmcknight.whatsup;
+				PRODUCT_NAME = WhatsUp;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F3CDF17D8B16F983AB7095C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		F8BA33E22469C8A9DC82CD51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3D05D95131987EA501E0431 /* Build configuration list for PBXNativeTarget "WhatsUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCCB84622BCB5AA39342A569 /* Debug */,
+				727011E6866F4327AECCEF9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A989544C75424DAE4CF438E1 /* Build configuration list for PBXProject "WhatsUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8BA33E22469C8A9DC82CD51 /* Debug */,
+				F3CDF17D8B16F983AB7095C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 697C010823738A84DCA89284 /* Project object */;
+}
