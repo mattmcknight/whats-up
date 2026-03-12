@@ -8,31 +8,24 @@ final class AppState: ObservableObject {
     let alarmController = AlarmController()
     let taskStore = TaskStore()
 
-    private nonisolated(unsafe) var midnightTimer: Timer?
-
     init() {
         meetingMonitor.bind(to: calendarService, alarm: alarmController)
-        scheduleMidnightRollover()
+        observeSystemWake()
     }
 
-    private func scheduleMidnightRollover() {
-        let calendar = Calendar.current
-        guard let tomorrow = calendar.date(byAdding: .day, value: 1, to: calendar.startOfDay(for: Date())) else { return }
-
-        midnightTimer = Timer(fire: tomorrow, interval: 86400, repeats: true) { [weak self] _ in
+    private func observeSystemWake() {
+        NotificationCenter.default.addObserver(
+            forName: NSWorkspace.didWakeNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
             Task { @MainActor in
-                self?.rollover()
+                self?.calendarService.restartPolling()
+                self?.calendarService.fetchEvents()
+                // Calendar daemon may not have synced yet — fetch again after a delay
+                try? await Task.sleep(for: .seconds(3))
+                self?.calendarService.fetchEvents()
             }
         }
-        RunLoop.main.add(midnightTimer!, forMode: .common)
-    }
-
-    private func rollover() {
-        alarmController.resetForNewDay()
-        calendarService.fetchEvents()
-    }
-
-    deinit {
-        midnightTimer?.invalidate()
     }
 }

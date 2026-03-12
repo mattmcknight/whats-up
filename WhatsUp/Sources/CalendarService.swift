@@ -12,6 +12,7 @@ final class CalendarService: ObservableObject {
 
     init() {
         Task { await requestAccessAndFetch() }
+        observeStoreChanges()
     }
 
     private func requestAccessAndFetch() async {
@@ -49,12 +50,30 @@ final class CalendarService: ObservableObject {
             .map { CalendarEvent(from: $0) }
     }
 
+    private func observeStoreChanges() {
+        NotificationCenter.default.addObserver(
+            forName: .EKEventStoreChanged,
+            object: store,
+            queue: .main
+        ) { [weak self] _ in
+            Task { @MainActor in
+                self?.fetchEvents()
+            }
+        }
+    }
+
     private func startPolling() {
         pollTimer = Timer.scheduledTimer(withTimeInterval: 300, repeats: true) { [weak self] _ in
             Task { @MainActor in
                 self?.fetchEvents()
             }
         }
+    }
+
+    func restartPolling() {
+        pollTimer?.invalidate()
+        guard authorized else { return }
+        startPolling()
     }
 
     deinit {

@@ -14,10 +14,12 @@ final class AlarmController: ObservableObject {
     @Published var isAlarming = false
 
     private var eventStates: [String: EventState] = [:]
+    private var statesDate: Date = Calendar.current.startOfDay(for: Date())
     private let soundPlayer = SoundPlayer()
     private var alarmWindow: NSWindow?
 
     func shouldAlarm(for event: CalendarEvent) -> Bool {
+        pruneIfNewDay()
         let state = eventStates[event.id] ?? .pending
         return event.isActive && state == .pending
     }
@@ -94,8 +96,11 @@ final class AlarmController: ObservableObject {
         alarmWindow = window
     }
 
-    /// Reset states at midnight for a new day
-    func resetForNewDay() {
-        eventStates.removeAll()
+    private func pruneIfNewDay() {
+        let today = Calendar.current.startOfDay(for: Date())
+        if today > statesDate {
+            eventStates.removeAll()
+            statesDate = today
+        }
     }
 }
