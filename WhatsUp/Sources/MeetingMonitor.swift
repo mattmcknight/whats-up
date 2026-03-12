@@ -32,11 +32,14 @@ final class MeetingMonitor: ObservableObject {
     }
 
     private func startTicking() {
-        tickTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+        let timer = Timer(timeInterval: 1, repeats: true) { [weak self] _ in
             Task { @MainActor in
                 self?.tick()
             }
         }
+        timer.tolerance = 0.1
+        RunLoop.main.add(timer, forMode: .common)
+        tickTimer = timer
     }
 
     private func tick() {

@@ -4,6 +4,15 @@ import SwiftUI
 struct WhatsUpApp: App {
     @StateObject private var appState = AppState()
 
+    init() {
+        // Disable App Nap — this app's timers must fire on time for meeting alerts
+        ProcessInfo.processInfo.disableAutomaticTermination("Meeting alerts active")
+        ProcessInfo.processInfo.beginActivity(
+            options: [.userInitiated, .idleSystemSleepDisabled],
+            reason: "Time-sensitive meeting alerts"
+        )
+    }
+
     var body: some Scene {
         MenuBarExtra {
             MenuBarPopover(appState: appState)
