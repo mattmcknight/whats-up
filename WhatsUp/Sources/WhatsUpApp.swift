@@ -83,6 +83,10 @@ struct MenuBarPopover: View {
             }
 
             Divider()
+            Button("Refresh Calendars") {
+                appState.calendarService.fetchEvents()
+            }
+            .keyboardShortcut("r")
             Button("Quit") {
                 NSApplication.shared.terminate(nil)
             }
