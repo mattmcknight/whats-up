@@ -33,6 +33,8 @@ final class CalendarService: ObservableObject {
     func fetchEvents() {
         guard authorized else { return }
 
+        store.reset()
+
         let calendar = Calendar.current
         let startOfDay = calendar.startOfDay(for: Date())
         let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
