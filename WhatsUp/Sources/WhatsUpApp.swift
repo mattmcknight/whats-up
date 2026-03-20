@@ -78,13 +78,13 @@ struct MenuBarPopover: View {
                     .foregroundStyle(.secondary)
 
                 ForEach(upcoming) { event in
-                    MeetingRow(event: event, appState: appState)
+                    MeetingRow(event: event)
                 }
             }
 
             Divider()
             Button("Refresh Calendars") {
-                appState.calendarService.fetchEvents()
+                appState.calendarService.refreshAndFetch()
             }
             .keyboardShortcut("r")
             Button("Quit") {
@@ -99,35 +99,27 @@ struct MenuBarPopover: View {
 
 struct MeetingRow: View {
     let event: CalendarEvent
-    let appState: AppState
 
     var body: some View {
-        Button(action: { joinMeeting() }) {
-            HStack {
-                if event.isActive {
-                    Circle()
-                        .fill(.red)
-                        .frame(width: 6, height: 6)
-                }
-                let zoomLink = ZoomDetector.extractLink(from: event)
-                Image(systemName: zoomLink != nil ? "video.fill" : "person.2.fill")
-                    .foregroundStyle(.secondary)
-                    .font(.caption2)
-                Text(event.title)
-                    .lineLimit(1)
-                Spacer()
-                Text(event.startDate, style: .time)
-                    .foregroundStyle(.secondary)
+        let zoomLink = ZoomDetector.extractLink(from: event)
+        HStack {
+            if event.isActive {
+                Circle()
+                    .fill(.red)
+                    .frame(width: 6, height: 6)
             }
-        }
-        .buttonStyle(.plain)
-    }
-
-    private func joinMeeting() {
-        if let url = ZoomDetector.extractLink(from: event) {
-            appState.alarmController.joinZoom(url: url)
-        } else {
-            appState.alarmController.acknowledge()
+            Text(event.title)
+                .lineLimit(1)
+            Spacer()
+            Text(event.startDate, style: .time)
+                .foregroundStyle(.secondary)
+            if let url = zoomLink {
+                Button(action: { NSWorkspace.shared.open(url) }) {
+                    Image(systemName: "video.fill")
+                        .foregroundStyle(.blue)
+                }
+                .buttonStyle(.plain)
+            }
         }
     }
 }

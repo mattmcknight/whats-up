@@ -30,10 +30,13 @@ final class CalendarService: ObservableObject {
         }
     }
 
+    func refreshAndFetch() {
+        store.refreshSourcesIfNecessary()
+        fetchEvents()
+    }
+
     func fetchEvents() {
         guard authorized else { return }
-
-        store.reset()
 
         let calendar = Calendar.current
         let startOfDay = calendar.startOfDay(for: Date())

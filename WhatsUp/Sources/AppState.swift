@@ -21,10 +21,10 @@ final class AppState: ObservableObject {
         ) { [weak self] _ in
             Task { @MainActor in
                 self?.calendarService.restartPolling()
-                self?.calendarService.fetchEvents()
-                // Calendar daemon may not have synced yet — fetch again after a delay
+                self?.calendarService.refreshAndFetch()
+                // Calendar daemon may not have synced yet — refresh again after a delay
                 try? await Task.sleep(for: .seconds(3))
-                self?.calendarService.fetchEvents()
+                self?.calendarService.refreshAndFetch()
             }
         }
     }
