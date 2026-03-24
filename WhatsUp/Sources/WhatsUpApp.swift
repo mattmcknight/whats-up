@@ -5,7 +5,7 @@ struct WhatsUpApp: App {
     @StateObject private var appState = AppState()
 
     init() {
-        // Disable App Nap — this app's timers must fire on time for meeting alerts
+        // Disable App Nap — timers must fire on time for meeting alerts
         ProcessInfo.processInfo.disableAutomaticTermination("Meeting alerts active")
         ProcessInfo.processInfo.beginActivity(
             options: [.userInitiated, .idleSystemSleepDisabled],
@@ -15,7 +15,10 @@ struct WhatsUpApp: App {
 
     var body: some Scene {
         MenuBarExtra {
-            MenuBarPopover(appState: appState)
+            MenuBarPopover(
+                calendarService: appState.calendarService,
+                taskStore: appState.taskStore
+            )
         } label: {
             MenuBarLabel(meetingMonitor: appState.meetingMonitor)
         }
@@ -39,22 +42,19 @@ struct MenuBarLabel: View {
 }
 
 struct MenuBarPopover: View {
-    @ObservedObject var appState: AppState
+    @ObservedObject var calendarService: CalendarService
+    @ObservedObject var taskStore: TaskStore
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("What's Up")
                 .font(.headline)
 
-            // Current task
             HStack(spacing: 6) {
                 Image(systemName: "pencil.line")
                     .foregroundStyle(.secondary)
                     .font(.caption)
-                TextField("Working on...", text: Binding(
-                    get: { appState.taskStore.currentTask },
-                    set: { appState.taskStore.currentTask = $0 }
-                ))
+                TextField("Working on...", text: $taskStore.currentTask)
                     .textFieldStyle(.plain)
                     .font(.callout)
             }
@@ -66,7 +66,7 @@ struct MenuBarPopover: View {
 
             Divider()
 
-            let upcoming = appState.calendarService.todayEvents
+            let upcoming = calendarService.todayEvents
                 .filter { $0.isUpcoming || $0.isActive }
 
             if upcoming.isEmpty {
@@ -84,7 +84,7 @@ struct MenuBarPopover: View {
 
             Divider()
             Button("Refresh Calendars") {
-                appState.calendarService.refreshAndFetch()
+                calendarService.refreshAndFetch()
             }
             .keyboardShortcut("r")
             Button("Quit") {
@@ -101,7 +101,6 @@ struct MeetingRow: View {
     let event: CalendarEvent
 
     var body: some View {
-        let zoomLink = ZoomDetector.extractLink(from: event)
         HStack {
             if event.isActive {
                 Circle()
@@ -113,7 +112,7 @@ struct MeetingRow: View {
             Spacer()
             Text(event.startDate, style: .time)
                 .foregroundStyle(.secondary)
-            if let url = zoomLink {
+            if let url = ZoomDetector.extractLink(from: event) {
                 Button(action: { NSWorkspace.shared.open(url) }) {
                     Image(systemName: "video.fill")
                         .foregroundStyle(.blue)

@@ -1,5 +1,4 @@
 import SwiftUI
-import Combine
 
 @MainActor
 final class AppState: ObservableObject {
@@ -20,11 +19,12 @@ final class AppState: ObservableObject {
             queue: .main
         ) { [weak self] _ in
             Task { @MainActor in
+                // macOS fires didWakeNotification multiple times; CalendarService.refreshAndFetch
+                // is rate-limited so only the first call per second does real work.
                 self?.calendarService.restartPolling()
                 self?.calendarService.refreshAndFetch()
-                // Calendar daemon may not have synced yet — refresh again after a delay
-                try? await Task.sleep(for: .seconds(3))
-                self?.calendarService.refreshAndFetch()
+                // EKEventStoreChanged will fire once the calendar daemon finishes syncing,
+                // triggering a follow-up fetch automatically.
             }
         }
     }
